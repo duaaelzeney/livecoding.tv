@@ -1,0 +1,6 @@
+
+*.pkl
+
+notebooks/.ipynb_checkpoints/Untitled-checkpoint.ipynb
+
+notebooks/.ipynb_checkpoints/Political Classifier-checkpoint.ipynb
