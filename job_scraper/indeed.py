@@ -9,6 +9,12 @@ import time, arrow
  
 class mine_jobs():
 
+    dsn = {
+        'database_file': './jobs.db',
+    }
+
+    conn            =   False
+
     num_threads     =   15
     urls            =   []
     data            =   []
@@ -19,7 +25,17 @@ class mine_jobs():
 
         self.num_threads    =   num_threads
         self.q              =   Queue(maxsize=0)
+
+        self.set_dbh()
         
+    def __del__(self):
+        self.conn.close()
+
+    def get_dbh(self):
+        return self.conn
+
+    def set_dbh(self):
+        self.conn = db.connect(self.dsn['database_file'])
 
     def get_http(self, url):
 
@@ -102,10 +118,15 @@ class mine_jobs():
 
 
 
-miner = mine_jobs(num_threads=10)
+miner = mine_jobs(num_threads=25)
 # miner.run_threaded()
-miner.mine_indeed(limit=151)
-print miner.data
+miner.mine_indeed(limit=2111)
+miner_df = pd.DataFrame(miner.data)
+miner_df.to_sql('jobs', con=miner.get_dbh(), if_exists='replace')
+
+# miner_grp = miner_df.groupby(['title', 'company', 'url'])
+# print miner_grp.count().sort()   
+
 
 # print miner.urls
 
