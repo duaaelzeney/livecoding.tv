@@ -66,7 +66,7 @@ if __name__ == '__main__':
     logging.basicConfig(level=logging.DEBUG,
                         format='%(levelname)-8s %(message)s')
 
-    xmpp = EchoBot('dyerrington@livecoding.tv', 'whatever your password is :p')
+    xmpp = EchoBot('WilfordII@livecoding.tv', 'meowmeow')
     xmpp.register_plugin('xep_0030') # Service Discovery
     xmpp.register_plugin('xep_0045') # Multi-User Chat
     xmpp.register_plugin('xep_0199') # XMPP Ping

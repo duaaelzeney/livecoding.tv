@@ -4,3 +4,9 @@
 notebooks/.ipynb_checkpoints/Untitled-checkpoint.ipynb
 
 notebooks/.ipynb_checkpoints/Political Classifier-checkpoint.ipynb
+
+*.py
+
+job_scraper/#indeed.py#
+
+notebooks/.ipynb_checkpoints/Indeed Analysis-checkpoint.ipynb
