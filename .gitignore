@@ -10,3 +10,7 @@ notebooks/.ipynb_checkpoints/Political Classifier-checkpoint.ipynb
 job_scraper/#indeed.py#
 
 notebooks/.ipynb_checkpoints/Indeed Analysis-checkpoint.ipynb
+
+*.pyc
+
+*.log
